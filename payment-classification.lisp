@@ -6,3 +6,9 @@
 (defclass salaried-classification (payment-classification)
   ((salary :initarg :salary
            :accessor salary)))
+
+(defclass commissioned-classification (payment-classification)
+  ((salary :initarg :salary
+           :accessor salary)
+   (rate :initarg :rate
+         :accessor rate)))

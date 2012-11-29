@@ -10,4 +10,6 @@
    :salary
    :schedule
    :payment-method
-   :*db*))
+   :*db*
+   :add-commissioned-employee
+   :rate))
