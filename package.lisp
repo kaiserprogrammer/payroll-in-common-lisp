@@ -12,4 +12,6 @@
    :payment-method
    :*db*
    :add-commissioned-employee
-   :rate))
+   :rate
+   :add-hourly-employee
+   :hourly-rate))

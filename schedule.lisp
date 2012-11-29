@@ -8,3 +8,6 @@
 
 (defclass bi-weekly-schedule (schedule)
   ())
+
+(defclass weekly-schedule (schedule)
+  ())
