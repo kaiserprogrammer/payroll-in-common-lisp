@@ -14,4 +14,9 @@
    :add-commissioned-employee
    :rate
    :add-hourly-employee
-   :hourly-rate))
+   :hourly-rate
+   :change-address
+   :change-name
+   :change-commissioned
+   :change-hourly
+   :change-salaried))
