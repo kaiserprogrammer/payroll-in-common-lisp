@@ -1,5 +1,7 @@
 (in-package :payroll)
 
+(defvar *db*)
+
 (defclass memory-db ()
   ((id :initform 0
        :accessor id)

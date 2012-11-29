@@ -9,4 +9,5 @@
    :payment-classification
    :salary
    :schedule
-   :payment-method))
+   :payment-method
+   :*db*))
