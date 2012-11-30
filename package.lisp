@@ -27,4 +27,9 @@
    :timecard
    :add-timecard
    :hours
-   :delete-employee))
+   :delete-employee
+   :change-union-member
+   :affiliation
+   :dues
+   :union-member-id
+   :get-union-member))

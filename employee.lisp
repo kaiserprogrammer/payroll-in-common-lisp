@@ -11,7 +11,9 @@
    (schedule :initarg :schedule
              :accessor schedule)
    (payment-method :initarg :method
-                   :accessor payment-method)))
+                   :accessor payment-method)
+   (affiliation :accessor affiliation)
+   (union-member-id :accessor union-member-id)))
 
 (defun change-address (id address &optional (db *db*))
   (setf (address (get-employee db id)) address))
