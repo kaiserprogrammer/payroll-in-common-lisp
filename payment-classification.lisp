@@ -17,4 +17,10 @@
 
 (defclass hourly-classification (payment-classification)
   ((hourly-rate :initarg :rate
-                :accessor hourly-rate)))
+                :accessor hourly-rate)
+   (timecards :accessor timecards
+              :initform (make-hash-table :test #'equalp))))
+
+(defgeneric timecard (classification date))
+(defmethod timecard ((c hourly-classification) (d timestamp))
+  (gethash d (timecards c)))
