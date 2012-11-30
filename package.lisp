@@ -26,4 +26,5 @@
    :date
    :timecard
    :add-timecard
-   :hours))
+   :hours
+   :delete-employee))

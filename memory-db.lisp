@@ -17,8 +17,11 @@
   (gethash id (employees db)))
 
 (defgeneric add-employee (db employee))
-
 (defmethod add-employee ((db memory-db) (e employee))
   (setf (id e) (next-id db))
   (setf (gethash (id e) (employees db)) e)
   (id e))
+
+(defgeneric delete-employee-from-database (db id))
+(defmethod delete-employee-from-database ((db memory-db) (id number))
+  (remhash id (employees db)))
