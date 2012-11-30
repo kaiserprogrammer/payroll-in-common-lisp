@@ -1,5 +1,5 @@
 (defpackage :payroll
-  (:use :cl)
+  (:use :cl :local-time)
   (:export
    :name
    :address
@@ -19,4 +19,11 @@
    :change-name
    :change-commissioned
    :change-hourly
-   :change-salaried))
+   :change-salaried
+   :add-sales-receipt
+   :amount
+   :sales-receipts
+   :date
+   :timecard
+   :add-timecard
+   :hours))

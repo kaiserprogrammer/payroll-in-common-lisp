@@ -11,7 +11,9 @@
   ((salary :initarg :salary
            :accessor salary)
    (rate :initarg :rate
-         :accessor rate)))
+         :accessor rate)
+   (receipts :initform (list)
+             :accessor sales-receipts)))
 
 (defclass hourly-classification (payment-classification)
   ((hourly-rate :initarg :rate
