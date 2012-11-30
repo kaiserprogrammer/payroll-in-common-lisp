@@ -32,4 +32,5 @@
    :affiliation
    :dues
    :union-member-id
-   :get-union-member))
+   :get-union-member
+   :change-unaffiliated))
