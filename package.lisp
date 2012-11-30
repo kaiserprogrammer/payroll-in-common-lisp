@@ -33,4 +33,7 @@
    :dues
    :union-member-id
    :get-union-member
-   :change-unaffiliated))
+   :change-unaffiliated
+   :add-service-charge
+   :get-service-charge
+   :charge))

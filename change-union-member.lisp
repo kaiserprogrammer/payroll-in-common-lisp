@@ -2,7 +2,13 @@
 
 (defclass affiliation ()
   ((dues :initarg :dues
-         :accessor dues)))
+         :accessor dues)
+   (service-charges :initform (make-hash-table :test #'equalp)
+                    :accessor service-charges)))
+
+(defgeneric get-service-charge (affiliation date))
+(defmethod get-service-charge ((af affiliation) (date timestamp))
+  (gethash date (service-charges af)))
 
 (defclass no-affiliation () ())
 
