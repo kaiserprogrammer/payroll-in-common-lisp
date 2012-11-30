@@ -36,4 +36,11 @@
    :change-unaffiliated
    :add-service-charge
    :get-service-charge
-   :charge))
+   :charge
+   :payday
+   :pay-date
+   :get-paycheck
+   :gross-pay
+   :disposition
+   :deductions
+   :net-pay))

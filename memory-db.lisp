@@ -29,6 +29,15 @@
   (setf (union-member-id e) (next-id db))
   (setf (gethash (union-member-id e) (union-members db)) e))
 
+(defgeneric get-all-employees (db))
+(defmethod get-all-employees ((db memory-db))
+  (let ((es (list)))
+    (maphash (lambda (id e)
+               (declare (ignore id))
+               (push e es))
+             (employees db))
+    es))
+
 (defgeneric get-union-member (db union-member-id))
 (defmethod get-union-member (db id)
   (gethash id (union-members db)))

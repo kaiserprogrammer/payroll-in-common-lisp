@@ -12,8 +12,23 @@
              :accessor schedule)
    (payment-method :initarg :method
                    :accessor payment-method)
-   (affiliation :accessor affiliation)
+   (affiliation :accessor affiliation
+                :initform (make-instance 'no-affiliation))
    (union-member-id :accessor union-member-id)))
+
+(defgeneric payday? (employee date))
+(defmethod payday? ((e employee) (date timestamp))
+  (payday? (schedule e) date))
+
+(defgeneric get-pay-period-start-date (employee date))
+(defmethod get-pay-period-start-date ((e employee) (date timestamp))
+  (get-pay-period-start-date (schedule e) date))
+
+(defgeneric calculate-pay (employee paycheck))
+(defmethod calculate-pay ((e employee) (pc paycheck))
+  (setf (gross-pay pc) (calculate-pay (payment-classification e) pc))
+  (setf (disposition pc) (disposition (payment-method e)))
+  (setf (deductions pc) (calculate-deductions (affiliation e) pc)))
 
 (defun change-address (id address &optional (db *db*))
   (setf (address (get-employee db id)) address))

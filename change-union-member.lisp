@@ -12,6 +12,18 @@
 
 (defclass no-affiliation () ())
 
+(defgeneric calculate-deductions (affiliation paycheck))
+(defmethod calculate-deductions ((af affiliation) (pc paycheck))
+  (+
+   (dues af)
+   (loop for service-charge being the hash-values in (service-charges af)
+      when (and (timestamp>= (date service-charge) (start-date pc))
+                (timestamp<= (date service-charge) (pay-date pc)))
+      sum (charge service-charge))))
+
+(defmethod calculate-deductions ((af no-affiliation) (pc paycheck))
+  0)
+
 (defun change-union-member (id dues &optional (db *db*))
   (let ((e (get-employee db id)))
     (add-union-member db e)

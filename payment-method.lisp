@@ -5,3 +5,6 @@
 
 (defclass hold-method ()
   ())
+
+(defmethod disposition ((method hold-method))
+  "Hold")
