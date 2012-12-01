@@ -43,4 +43,13 @@
    :gross-pay
    :disposition
    :deductions
-   :net-pay))
+   :net-pay
+   :add-employee-presenter
+   :all-information-collected?
+   :add-epmloyee-presenter
+   :hourly
+   :salary?
+   :commission?
+   :commission-rate
+   :commission-salary
+   :submit-enabled?))
