@@ -115,6 +115,14 @@
       (is (= 1050.
              (net-pay pc))))))
 
+(test no-pay-on-wrong-date-for-commissioned-employee
+    (let* ((*db* (make-instance 'memory-db))
+         (id (add-commissioned-employee "John" "Work" 1000. 10))
+         (pay-date (local-time:parse-timestring "2001-11-23")))
+    (let* ((payday (payday pay-date))
+           (pc (get-paycheck payday id)))
+      (is (null pc)))))
+
 (test deduct-service-charges
   (let* ((*db* (make-instance 'memory-db))
          (id (add-hourly-employee "John" "Work" 12.5))

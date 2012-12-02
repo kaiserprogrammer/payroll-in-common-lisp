@@ -16,7 +16,7 @@
   ())
 
 (defmethod payday? ((s bi-weekly-schedule) (date timestamp))
-  t)
+  (and (last-day-of-week? date) (oddp (truncate (/ (local-time:timestamp-to-universal date) (* 60 60 24 7))))))
 
 (defmethod get-pay-period-start-date ((s bi-weekly-schedule) (date timestamp))
   (timestamp- (first-day-of-week date) 7 :day))
