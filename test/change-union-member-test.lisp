@@ -26,4 +26,6 @@
     (change-unaffiliated id)
     (let ((af (affiliation e)))
       (is (eql 'payroll::no-affiliation
-               (class-name (class-of af)))))))
+               (class-name (class-of af)))))
+    (is (null (get-union-member *db* (union-member-id e))))))
+

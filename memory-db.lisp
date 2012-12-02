@@ -45,3 +45,7 @@
 (defgeneric delete-employee-from-database (db id))
 (defmethod delete-employee-from-database ((db memory-db) (id number))
   (remhash id (employees db)))
+
+(defgeneric delete-union-member-from-database (db member-id))
+(defmethod delete-union-member-from-database ((db memory-db) (member-id number))
+  (remhash member-id (union-members db)))

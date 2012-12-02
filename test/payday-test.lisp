@@ -102,6 +102,17 @@
       (is (= 25.0
              (net-pay pc))))))
 
+(test pay-with-no-commission
+  (let* ((*db* (make-instance 'memory-db))
+         (id (add-commissioned-employee "John" "Work" 1000. 10))
+         (pay-date (local-time:parse-timestring "2001-11-30")))
+    (let* ((payday (payday pay-date))
+           (pc (get-paycheck payday id)))
+      (is (= 1000.
+             (gross-pay pc)))
+      (is (= 1000.
+             (net-pay pc))))))
+
 (test pay-with-one-sale-in-period
   (let* ((*db* (make-instance 'memory-db))
          (id (add-commissioned-employee "John" "Work" 1000. 10))

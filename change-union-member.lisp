@@ -32,5 +32,7 @@
                          :dues dues))))
 
 (defun change-unaffiliated (id &optional (db *db*))
-  (setf (affiliation (get-employee db id))
-        (make-instance 'no-affiliation)))
+  (let ((e (get-employee db id)))
+    (delete-union-member-from-database db (union-member-id e))
+    (setf (affiliation e)
+          (make-instance 'no-affiliation))))
