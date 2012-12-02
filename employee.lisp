@@ -58,6 +58,3 @@
                 (make-instance 'salaried-classification
                                :salary salary))))
 
-(defclass salaried-employee (employee)
-  ((salary :initarg :salary
-           :accessor :salary)))

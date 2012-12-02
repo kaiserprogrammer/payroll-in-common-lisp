@@ -16,4 +16,3 @@
         (is (local-time:timestamp= date
                         (date (first sales))))))))
 
-(run!)

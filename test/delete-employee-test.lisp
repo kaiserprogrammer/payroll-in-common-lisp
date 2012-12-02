@@ -10,4 +10,3 @@
     (delete-employee id)
     (is (null (get-employee *db* id)))))
 
-(run!)

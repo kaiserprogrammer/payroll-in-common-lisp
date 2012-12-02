@@ -17,5 +17,3 @@
     (let ((pm (payment-method e)))
       (is (eql 'payroll::hold-method
                (class-name (class-of pm)))))))
-
-(run!)

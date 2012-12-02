@@ -15,4 +15,3 @@
       (is (local-time:timestamp= date
                       (date tc))))))
 
-(run!)

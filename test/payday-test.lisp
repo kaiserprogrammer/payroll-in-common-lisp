@@ -105,7 +105,7 @@
 (test pay-with-one-sale-in-period
   (let* ((*db* (make-instance 'memory-db))
          (id (add-commissioned-employee "John" "Work" 1000. 10))
-         (pay-date (local-time:parse-timestring "2001-11-09")))
+         (pay-date (local-time:parse-timestring "2001-11-30")))
     (add-sales-receipt id pay-date 500)
     (add-sales-receipt id (local-time:timestamp- pay-date 14 :day) 1000)
     (let* ((payday (payday pay-date))
@@ -150,5 +150,3 @@
              (deductions pc)))
       (is (= 5.
              (net-pay pc))))))
-
-(run!)

@@ -18,5 +18,3 @@
       (let ((ps (schedule e)))
         (is (eql 'payroll::bi-weekly-schedule
                  (class-name (class-of ps))))))))
-
-(run!)

@@ -18,4 +18,3 @@
         (is (local-time:timestamp= date
                                    (date sc)))))))
 
-(run!)

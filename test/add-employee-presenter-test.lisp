@@ -60,4 +60,3 @@
     (setf (hourly presenter) t)
     (is-true (submit-enabled? view))))
 
-(run!)

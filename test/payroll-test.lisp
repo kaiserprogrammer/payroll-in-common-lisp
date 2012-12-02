@@ -66,4 +66,3 @@
       (is (eql 'payroll::monthly-schedule
                (class-name (class-of ps)))))))
 
-(run! 'payroll-test)

@@ -27,5 +27,3 @@
     (let ((af (affiliation e)))
       (is (eql 'payroll::no-affiliation
                (class-name (class-of af)))))))
-
-(run!)

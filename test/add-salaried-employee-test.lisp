@@ -33,4 +33,3 @@
             (is (eql 'payroll::hold-method
                      (class-name (class-of pm))))))))))
 
-(run!)

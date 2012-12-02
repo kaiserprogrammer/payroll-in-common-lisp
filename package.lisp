@@ -46,7 +46,6 @@
    :net-pay
    :add-employee-presenter
    :all-information-collected?
-   :add-epmloyee-presenter
    :hourly
    :salary?
    :commission?
