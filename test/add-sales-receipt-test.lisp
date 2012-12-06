@@ -15,4 +15,3 @@
                (amount (first sales))))
         (is (local-time:timestamp= date
                         (date (first sales))))))))
-

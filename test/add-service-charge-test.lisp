@@ -10,11 +10,10 @@
          (date (local-time:parse-timestring "2012-12-31")))
     (change-union-member id 10.0)
     (add-service-charge (union-member-id e) date 12.95)
-    (let ((af (affiliation e)))
-      (let ((sc (get-service-charge af date)))
-        (is (not (null sc)))
-        (is (= 12.95
-               (charge sc)))
-        (is (local-time:timestamp= date
-                                   (date sc)))))))
+    (let ((sc (get-service-charge (affiliation e) date)))
+      (is (not (null sc)))
+      (is (= 12.95
+             (charge sc)))
+      (is (local-time:timestamp= date
+                                 (date sc))))))
 
