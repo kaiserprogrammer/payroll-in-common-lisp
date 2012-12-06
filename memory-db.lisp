@@ -31,12 +31,7 @@
 
 (defgeneric get-all-employees (db))
 (defmethod get-all-employees ((db memory-db))
-  (let ((es (list)))
-    (maphash (lambda (id e)
-               (declare (ignore id))
-               (push e es))
-             (employees db))
-    es))
+  (alexandria:hash-table-values (employees db)))
 
 (defgeneric get-union-member (db union-member-id))
 (defmethod get-union-member (db id)
